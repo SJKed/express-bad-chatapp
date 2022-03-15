@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Fun chat app</h1>
+
+        <div class="chat-container">
+
+            <% for(let chat of chats) { %>
+                <div class="chat">
+                    <h2>
+                        <%= chat.name %>
+                    </h2>
+                    <p>
+                        <%= chat.chat %>
+                    </p>
+                </div>
+                <% } %>
+
+        </div>
+
+        <div class="input-field">
+
+            <form action="/create-chat" method="post">
+                <input type="text" name="chat" id="input"></input>
+                <button>Chat!</button>
+            </form>
+
+        </div>
+
+
+    </div>
+
+</body>
+<script src="polling.js" />
+
+</html>
